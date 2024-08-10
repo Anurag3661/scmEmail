@@ -92,6 +92,7 @@ public class PageController {
         user.setPassword(userForm.getPassword());
         user.setAbout(userForm.getAbout());
         user.setPhoneNumber(userForm.getPhoneNumber());
+        user.setEnabled(false);
         user.setProfilePic("https://images.app.goo.gl/41kRFBstSeYTAoYr8");
 
         User savedUser = userService.saveUser(user);

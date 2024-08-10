@@ -34,6 +34,9 @@ public class SecurityConfig {
     @Autowired
     private OAuthAuthenticationSuccessHandlerr handlerr;
 
+    @Autowired
+    private AuthFailureHandler authFailureHandler;
+
     @Bean
     public DaoAuthenticationProvider authenticationProvider() {
         DaoAuthenticationProvider daoAuthenticationProvider = new DaoAuthenticationProvider();
@@ -87,6 +90,9 @@ public class SecurityConfig {
             // }
 
             // });
+
+
+            formLogin.failureHandler(authFailureHandler);
 
         });
 
